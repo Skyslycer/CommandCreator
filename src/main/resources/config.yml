@@ -42,8 +42,8 @@ disabled-commands:
   1:
     # STARTS_WITH - does the command start with it (without /)
     # CONTAINS - does the command contain it
-    # REGEX - Does the regex match with the command
-    # EQUALS - Does the command equal it (arguments separated by ' ')
+    # REGEX - does the regex match with the command
+    # EQUALS - oes the command equal it (arguments separated by ' ')
     mode: 'STARTS_WITH'
     commands:
       - 'version'
