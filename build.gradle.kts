@@ -40,6 +40,7 @@ tasks {
         relocate("com.tchristofferson.configupdater", "$shadePattern.configupdater")
         val nullClassifier: String? = null
         archiveClassifier.set(nullClassifier)
+        minimize()
     }
 
     build {
