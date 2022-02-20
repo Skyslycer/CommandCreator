@@ -1,0 +1,50 @@
+# REGISTER - with tab complete
+# INTERCEPT - without tab complete
+mode: 'REGISTER'
+
+# The message when the console tries to run a player-only command
+player-only-message: '&cThis command is console only!'
+
+# The commands
+commands:
+  # Name of the command
+  mycommand:
+    # Messages (with MiniMessage and ColorCodes)
+    messages:
+      - '<gray>This supports MiniMessage!'
+      - '<green>Get support: <click:open_url:''https://discord.gg/MJkVb2NMPS''>HERE</click>'
+      - '&6ColorCode &7is supported too!'
+    # Commands the player should execute
+    player-commands:
+      - 'say hello'
+    # Commands the console should execute
+    console-command:
+      - 'msg %player% Hello!'
+    # Conditions
+    # HAS_PERMISSION - player needs to have the permission
+    # !HAS_PERMISSION - player needs to NOT have the permission
+    # IN_REGION - player needs to be in the region
+    # !IN_REGION - player needs to NOT be in the region
+    conditions:
+      - 'HAS_PERMISSION:commandcreator.mycommand'
+    # Message sent when the player does not meet the conditions
+    condition-message: '&cNo permission!'
+    # The description
+    description: 'A cool test command.'
+    # If the command should be run by players only
+    player-only: true
+    # The aliases for the command
+    aliases:
+      - 'mycmd'
+
+# Disabled commands
+disabled-commands:
+  1:
+    mode: 'STARTS_WITH'
+    commands:
+      - 'version'
+    conditions:
+      - 'HAS_PERMISSION:commandcreator.version'
+
+# The message when a player tries to execute a blocked command
+disabled-commands-message: '&cThis command is blocked!'
